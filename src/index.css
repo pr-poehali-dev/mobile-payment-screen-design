@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 220 17% 7%;
+    --foreground: 0 0% 100%;
 
-    --card: 240 8% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 222 14% 10%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 240 8% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222 14% 10%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 346 77% 50%;
+    --primary: 280 100% 70%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 100% 70%;
+    --secondary: 200 100% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 5% 15%;
-    --muted-foreground: 240 5% 64%;
+    --muted: 217 19% 15%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 346 77% 50%;
+    --accent: 280 100% 70%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 5% 20%;
-    --input: 240 6% 12%;
-    --ring: 346 77% 50%;
+    --border: 217 19% 20%;
+    --input: 217 19% 15%;
+    --ring: 280 100% 70%;
 
-    --radius: 1.2rem;
+    --radius: 1.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -97,15 +97,15 @@
 
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(
-      135deg,
-      hsl(240 10% 3.9%) 0%,
-      hsl(280 15% 8%) 100%
+    background: radial-gradient(
+      ellipse at top,
+      hsl(280 100% 15%) 0%,
+      hsl(220 17% 7%) 50%
     );
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #e91e63 0%, #9c27b0 50%, #3f51b5 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #06b6d4 50%, #3b82f6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -113,14 +113,34 @@
 
   .neon-glow {
     box-shadow:
-      0 0 20px rgba(233, 30, 99, 0.5),
-      0 0 40px rgba(156, 39, 176, 0.3);
+      0 0 30px rgba(168, 85, 247, 0.6),
+      0 0 60px rgba(168, 85, 247, 0.4),
+      0 0 90px rgba(59, 130, 246, 0.2);
   }
 
-  .neon-border {
-    border: 2px solid transparent;
-    background:
-      linear-gradient(hsl(240 8% 8%), hsl(240 8% 8%)) padding-box,
-      linear-gradient(135deg, #e91e63, #9c27b0) border-box;
+  .glass-card {
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(168, 85, 247, 0.1),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
   }
 }
