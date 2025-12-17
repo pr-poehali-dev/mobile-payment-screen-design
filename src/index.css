@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card: 240 8% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover: 240 8% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 262 83% 58%;
+    --primary: 346 77% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 280 100% 70%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 64%;
 
-    --accent: 262 83% 58%;
+    --accent: 346 77% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 262 83% 58%;
+    --border: 240 5% 20%;
+    --input: 240 6% 12%;
+    --ring: 346 77% 50%;
 
-    --radius: 1rem;
+    --radius: 1.2rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -97,69 +97,30 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Courier New", monospace;
-  }
-
-  .terminal-text {
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
-    font-family: "Courier New", monospace;
-  }
-
-  .scan-line {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .scan-line::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: rgba(0, 255, 0, 0.3);
-    animation: scan 4s linear infinite;
-  }
-
-  @keyframes scan {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(100vh);
-    }
-  }
-
-  .matrix-bg {
-    background-image: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 255, 0, 0.03) 2px,
-      rgba(0, 255, 0, 0.03) 4px
+    background: linear-gradient(
+      135deg,
+      hsl(240 10% 3.9%) 0%,
+      hsl(280 15% 8%) 100%
     );
   }
 
-  .glitch {
-    animation: glitch 1s infinite;
+  .gradient-text {
+    background: linear-gradient(135deg, #e91e63 0%, #9c27b0 50%, #3f51b5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  @keyframes glitch {
-    0%,
-    100% {
-      transform: translate(0);
-    }
-    20% {
-      transform: translate(-2px, 2px);
-    }
-    40% {
-      transform: translate(-2px, -2px);
-    }
-    60% {
-      transform: translate(2px, 2px);
-    }
-    80% {
-      transform: translate(2px, -2px);
-    }
+  .neon-glow {
+    box-shadow:
+      0 0 20px rgba(233, 30, 99, 0.5),
+      0 0 40px rgba(156, 39, 176, 0.3);
+  }
+
+  .neon-border {
+    border: 2px solid transparent;
+    background:
+      linear-gradient(hsl(240 8% 8%), hsl(240 8% 8%)) padding-box,
+      linear-gradient(135deg, #e91e63, #9c27b0) border-box;
   }
 }

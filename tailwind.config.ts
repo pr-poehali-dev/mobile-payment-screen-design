@@ -64,8 +64,7 @@ export default {
 				}
 			},
 			fontFamily: {
-				sans: ['Courier New', 'monospace'],
-				mono: ['Courier New', 'monospace']
+				sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
